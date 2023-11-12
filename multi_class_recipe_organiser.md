@@ -2,25 +2,25 @@
 
 ## 1. Describe the Problem
 
-As a user
-So that I can record my experiences
-I want to <span style="color: #b51f8d;">keep</span> a regular <span style="color: #b51f51;">diary</span>
+As a user  
+So that I can record my experiences  
+I want to keep a regular diary  
 
-As a user
-So that I can reflect on my experiences
-I want to <span style="color: #b51f8d;">read</span> my <span style="color: #0586b5;">past diary entries</span>
+As a user  
+So that I can reflect on my experiences  
+I want to read my past diary entries  
 
-As a user
-So that I can reflect on my experiences in my busy day
-I want to <span style="color: #b51f8d;">select</span> diary entries to read based on how much <span style="color: #039c94;">time I have</span> and my <span style="color: #c7671e;">reading speed</span>
+As a user  
+So that I can reflect on my experiences in my busy day  
+I want to select diary entries to read based on how much time I have and my reading speed
 
-As a user
-So that I can keep track of my tasks
-I want to keep a todo list along with my diary
+As a user  
+So that I can keep track of my tasks  
+I want to keep a todo list along with my diary  
 
-As a user
-So that I can keep track of my contacts
-I want to see a list of all of the mobile phone numbers in all my diary entries
+As a user  
+So that I can keep track of my contacts  
+I want to see a list of all of the mobile phone numbers in all my diary entries  
 
 ## 2. Design the Class System
 
