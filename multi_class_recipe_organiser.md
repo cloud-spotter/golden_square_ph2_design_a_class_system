@@ -42,7 +42,7 @@ class Organiser:
         #   phone_book: an instance of PhoneBook
         pass
     
-# Leave Organiser for now as not building an interface in this exercise
+# Leave Organiser for now as not building a user interface in this exercise
 # and isn't necessary for fulfilling the user stories/requirements given.
 
 
