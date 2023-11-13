@@ -19,8 +19,8 @@ So that I can keep track of my **tasks**
 I want to **keep** a **todo list** along with my diary  
 
 As a user  
-So that I can keep track of my contacts  
-I want to see a **list of all of the mobile phone numbers** in **all my diary entries**  
+So that I can keep track of my **contacts**  
+I want to **see** a **list of all of the mobile phone numbers** in **all my diary entries**  
 
 A phone number is 11 digits long and starts with zero. It will be stored as a string (integers starting with a 0 are illegal in Python, except zero itself).  
 
