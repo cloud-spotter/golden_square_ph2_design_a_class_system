@@ -30,58 +30,174 @@ _The diagram below shows the classes and their relationships._
 
 ![Diagram of an Organiser class plan](images/organiser_multiclass_design_diagram.png)
 
-_Also design the interface of each class in more detail._
+_Interface design of each class in more detail._
 
 ```python
-class MusicLibrary:
-    # User-facing properties:
-    #   tracks: list of instances of Track
+# File: lib/organiser.py
+class Organiser:
+    def __init__(self): 
+        # Parameters:
+        #   diary: an instance of Diary
+        #   todo_list: an instance of TodoList
+        #   phone_book: an instance of PhoneBook
+        pass
+    
+# Leave Organiser for now as not building an interface in this exercise
+# and isn't necessary for fulfilling the user stories/requirements given.
 
+
+# File: lib/diary.py
+class Diary:
     def __init__(self):
-        pass # No code here yet
+        pass
 
-    def add(self, track):
+    def add(self, entry):
         # Parameters:
-        #   track: an instance of Track
-        # Side-effects:
-        #   Adds the track to the tracks property of the self object
-        pass # No code here yet
-
-    def search_by_title(self, keyword):
-        # Parameters:
-        #   keyword: string
+        #   entry: an instance of DiaryEntry
         # Returns:
-        #   A list of the Track objects that have titles that include the keyword
-        pass # No code here yet
-
-
-class Track:
-    # User-facing properties:
-    #   title: string
-    #   artist: string
-
-    def __init__(self, title, artist):
-        # Parameters:
-        #   title: string
-        #   artist: string
+        #   Nothing
         # Side-effects:
-        #   Sets the title and artist properties
-        pass # No code here yet
+        #   Adds the entry to the entries list
+        pass
 
-    def format(self):
+    def all(self):
         # Returns:
-        #   A string of the form "TITLE by ARTIST"
-        pass # No code here yet
+        #   A list of instances of DiaryEntry
+        pass
+
+    def count_words(self):
+        # Returns:
+        #   An integer representing the number of words in all diary entries
+        #   This method will make use of the `count_words` method on DiaryEntry.
+        pass
+
+    def reading_time(self, wpm):
+        # Parameters:
+        #   wpm: an integer representing the number of words the user can read per minute
+        # Returns:
+        #   An integer representing an estimate of the reading time in minutes
+        #   if the user were to read all entries in the diary.
+        pass
+
+    def find_best_entry_for_reading_time(self, wpm, minutes):
+        # Parameters:
+        #   wpm: an integer representing the number of words the user can read per minute
+        #   minutes: an integer representing the number of minutes the user has to read
+        # Returns:
+        #   An instance of DiaryEntry representing the entry that is closest to,
+        #   but not over, the length that the user could read in the minutes
+        #   they have available given their reading speed.
+        pass
+
+
+# File: lib/diary_entry.py
+class DiaryEntry:
+    # Public Properties:
+    #   title: a string
+    #   contents: a string
+
+    def __init__(self, title, contents): # title, contents are strings
+        # Side-effects:
+        #   Sets the title and contents properties
+        pass
+
+    def count_words(self):
+        # Returns:
+        #   An integer representing the number of words in the contents
+        pass
+
+    def reading_time(self, wpm):
+        # Parameters:
+        #   wpm: an integer representing the number of words the user can read
+        #        per minute
+        # Returns:
+        #   An integer representing an estimate of the reading time in minutes
+        #   for the contents at the given wpm.
+        pass
+
+    def get_phone_number(self):
+        # Returns:
+        #   A list of strings representing a contact and their phone number
+
+
+# File: lib/phone_book.py
+class PhoneBook:
+    def __init__(self):
+        # Parameters:
+        #   contacts: a nested list of contact objects
+
+    def add(self, contact):
+    # Parameters:
+    #   contact: a list of strings representing a contact and their phone number
+    # Returns:
+    #   Nothing
+    # Side-effects:
+    #   Adds the contact to the contacts list
+    pass
+
+    def all(self):
+        # Returns:
+        #   A nested list of contacts
+        pass
+
+
+# File: lib/todo_list.py
+class TodoList:
+    def __init__(self):
+        pass
+
+    def add(self, todo):
+        # Parameters:
+        #   todo: an instance of Todo
+        # Returns:
+        #   Nothing
+        # Side-effects:
+        #   Adds the todo to the list of todos
+        pass
+      
+    def incomplete(self):
+        # Returns:
+        #   A list of Todo instances representing the todos that are not complete
+        pass
+
+    def complete(self):
+        # Returns:
+        #   A list of Todo instances representing the todos that are complete
+        pass
+
+
+# File: lib/todo.py
+class Todo:
+    # Public Properties:
+    #   task: a string representing the task to be done
+    #   complete: a boolean representing whether the task is complete
+
+    def __init__(self, task):
+        # Parameters:
+        #   task: a string representing the task to be done
+        # Side-effects:
+        #   Sets the task property
+        #   Sets the complete property to False
+        pass
+
+    def mark_complete(self):
+        # Returns:
+        #   Nothing
+        # Side-effects:
+        #   Sets the complete property to True
+        pass
+
+```
 
 ```
 
 ## 3. Create Examples as Integration Tests
 
-_Create examples of the classes being used together in different situations and
+_Examples of the classes being used together in different situations and
 combinations that reflect the ways in which the system will be used._
 
 ```python
-# EXAMPLE
+# TODO: update for current project
 
 """
 Given a library
@@ -98,11 +214,11 @@ library.tracks # => [track_1, track_2]
 
 ## 4. Create Examples as Unit Tests
 
-_Create examples, where appropriate, of the behaviour of each relevant class at
+_Examples, where appropriate, of the behaviour of each relevant class at
 a more granular level of detail._
 
 ```python
-# EXAMPLE
+# TODO: update for current project
 
 """
 Given a track with a title and an artist
@@ -116,16 +232,5 @@ _Encode each example as a test. You can add to the above list as you go._
 
 ## 5. Implement the Behaviour
 
-_After each test you write, follow the test-driving process of red, green,
-refactor to implement the behaviour._
-
-
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
----
-
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fgolden-square-in-python&prefill_File=resources%2Fmulti_class_recipe_template.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fgolden-square-in-python&prefill_File=resources%2Fmulti_class_recipe_template.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fgolden-square-in-python&prefill_File=resources%2Fmulti_class_recipe_template.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fgolden-square-in-python&prefill_File=resources%2Fmulti_class_recipe_template.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fgolden-square-in-python&prefill_File=resources%2Fmulti_class_recipe_template.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->
+_After each test you write, follow the test-driving process of **red, green,
+refactor** to implement the behaviour._
