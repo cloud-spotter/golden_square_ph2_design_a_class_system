@@ -194,21 +194,8 @@ class Todo:
 _Examples of the classes being used together in different situations and
 combinations that reflect the ways in which the system will be used._
 
-```python
-# TODO: update for current project
-
-"""
-Given a library
-When we add two tracks
-We see those tracks reflected in the tracks list
-"""
-library = MusicLibrary()
-track_1 = Track("Carte Blanche", "Veracocha")
-track_2 = Track("Synaesthesia", "The Thrillseekers")
-library.add(track_1)
-library.add(track_2)
-library.tracks # => [track_1, track_2]
-```
+Diary integration tests [here] TODO: add link
+TodoList integration tests [here] TODO: add link
 
 ## 4. Create Examples as Unit Tests
 
