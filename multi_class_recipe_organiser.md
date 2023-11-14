@@ -194,8 +194,8 @@ class Todo:
 _Examples of the classes being used together in different situations and
 combinations that reflect the ways in which the system will be used._
 
-Diary integration tests [here] TODO: add link
-TodoList integration tests [here] TODO: add link
+Diary integration tests [here](https://github.com/cloud-spotter/golden_square_ph2_design_a_class_system/blob/main/tests/test_integration_diary.py)  
+TodoList integration tests [here](https://github.com/cloud-spotter/golden_square_ph2_design_a_class_system/blob/main/tests/test_integration_todo_list.py)
 
 ## 4. Create Examples as Unit Tests
 
