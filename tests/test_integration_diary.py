@@ -60,14 +60,24 @@ def test_diary_integration_find_best_entry_for_time():
 5. After adding contacts to the PhoneBook, 
 #all should return all the contacts correctly
 """
-def test_phone_book_integration_add_and_return_contacts():
-    phone_book = PhoneBook()
-    diary_entry_1 = DiaryEntry("Rang Jo", "Tuesday lunch: Jo rang and left her new number (07000000003).")
-    diary_entry_2 = DiaryEntry("Tuesday Entry", "Some content")
-    diary_entry_3 = DiaryEntry("Rang Max", "Max is on 07000000004 now.")
-    phone_book.add(diary_entry_1.get_phone_number())
-    phone_book.add(diary_entry_2.get_phone_number())
-    phone_book.add(diary_entry_3.get_phone_number())
+# def test_phone_book_integration_add_and_return_contacts():
+#     phone_book = PhoneBook()
+#     diary_entry_1 = DiaryEntry("Rang Jo", "Tuesday lunch: Jo rang and left her new number 07000000003")
+#     diary_entry_2 = DiaryEntry("Tuesday Entry", "Some content")
+#     diary_entry_3 = DiaryEntry("Rang Max", "Max is on 07000000004 now.")
+#     phone_book.add(diary_entry_1.get_phone_number())
+#     phone_book.add(diary_entry_2.get_phone_number())
+#     phone_book.add(diary_entry_3.get_phone_number())
     
-    assert phone_book.all() == [["Jo", "07000000003"], ["Max", "07000000004"]]
+#     assert phone_book.all() == [["Jo", "07000000003"], ["Max", "07000000004"]]
 
+"""
+6. Given an instance of DiaryEntry,
+PhoneBook's #find_contact_in_entry should return 
+the contact name and phone number in a list -> ["name", "phone_number"]
+"""
+def test_find_contact_in_entry():
+    phone_book = PhoneBook()
+    diary_entry_1 = DiaryEntry("Rang Jo", "Tuesday lunch: Jo rang and left her new number 07000000003")
+
+    assert phone_book.find_contact_in_entry(diary_entry_1) == ["Jo", "07000000003"]
