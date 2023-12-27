@@ -76,7 +76,7 @@ def test_phone_book_integration_add_and_return_contacts():
     diary_entry_1 = DiaryEntry("Rang Jo", "Tuesday lunch: Jo's new number 07000000003")
     diary_entry_2 = DiaryEntry("Tuesday Entry", "Some content")
     diary_entry_3 = DiaryEntry("Rang Max", "Max is on 07000000004 now.")
-    phone_book.add(diary_entry_1.get_phone_number())  # Failing test. Need to rethink which methods should go with which class?
+    phone_book.add(diary_entry_1.get_phone_number())
     phone_book.add(diary_entry_2.get_phone_number())
     phone_book.add(diary_entry_3.get_phone_number())
     
